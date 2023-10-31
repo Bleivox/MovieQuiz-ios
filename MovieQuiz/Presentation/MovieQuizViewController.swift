@@ -82,7 +82,7 @@ final class MovieQuizViewController: UIViewController {
         imageView.layer.masksToBounds = true
         imageView.layer.borderWidth = 8
         imageView.layer.borderColor = UIColor.ypBlack.cgColor
-        imageView.layer.cornerRadius = 15
+        imageView.layer.cornerRadius = 20
         let currentQuestion = questions[currentQuestionIndex]
         show(quiz: convert(model: currentQuestion))
         
