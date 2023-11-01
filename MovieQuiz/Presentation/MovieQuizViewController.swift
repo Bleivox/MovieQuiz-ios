@@ -27,7 +27,9 @@ struct QuizResultsViewModel {
     let buttonText: String
 }
 final class MovieQuizViewController: UIViewController {
-    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
     
     @IBOutlet private var imageView: UIImageView!
     @IBOutlet private var textLabel: UILabel!
