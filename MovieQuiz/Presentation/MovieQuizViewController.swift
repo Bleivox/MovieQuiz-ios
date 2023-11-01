@@ -136,11 +136,6 @@ final class MovieQuizViewController: UIViewController {
         }
     }
     
-    private func cleanResult() {
-        imageView.layer.borderWidth = 0
-        imageView.layer.cornerRadius = 0
-    }
-    
     private func show(quiz result: QuizResultsViewModel) {
         let alert = UIAlertController(title: result.title,
                                       message: result.text,
