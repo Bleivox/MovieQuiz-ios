@@ -6,10 +6,10 @@
 //
 
 import UIKit
-class AlertPresenter {
+ final class AlertPresenter {
     public weak var  movieQuizViewController: UIViewController?
     
-    func show2(quiz result: AlertModel) {
+    func show(quiz result: AlertModel) {
         let alert = UIAlertController(title: result.title,
                                       message: result.message,
                                       preferredStyle: .alert)

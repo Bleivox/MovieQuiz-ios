@@ -85,7 +85,12 @@ final class MovieQuizViewController: UIViewController, QuestionFactoryDelegate {
         if currentQuestionIndex == questionsAmount - 1 {
             guard let statisticService = statisticService else { return }
             statisticService.store(correct: correctAnswers, total: questionsAmount)
-            let text = "Ваш результат: \(correctAnswers)/\(questionsAmount)\nКоличество сыгранных квизов: \(statisticService.gamesCount)\n Рекорд: \(statisticService.bestGame.correct)/\(questionsAmount) \(statisticService.bestGame.date.dateTimeString)\nСредняя точность: \(String(format: "%.2f", statisticService.totalAccuracy))%"
+            let text = """
+            Ваш результат: \(correctAnswers)/\(questionsAmount)
+            Количество сыгранных квизов: \(statisticService.gamesCount)
+            Рекорд: \(statisticService.bestGame.correct)/\(questionsAmount) \(statisticService.bestGame.date.dateTimeString)
+            Средняя точность: \(String(format: "%.2f", statisticService.totalAccuracy))%
+            """
             
             show(quiz: QuizResultsViewModel(title: "Этот раунд окончен!", text: text, buttonText: "Сыграть ещё раз"))
         } else {
@@ -103,37 +108,43 @@ final class MovieQuizViewController: UIViewController, QuestionFactoryDelegate {
             self?.correctAnswers = 0
             self?.questionFactory.requestNextQuestion()
         })
-        presenter.show2(quiz: alertModel)
+        presenter.show(quiz: alertModel)
     }
     
-    private func answerGived(answer: Bool) {
-        let yesAnswer: Bool = true
-        let noAnswer: Bool = false
-        
-        if answer == yesAnswer {
-            guard let currentQuestion = currentQuestion else {
-                return
-            }
-            showAnswerResult(isCorrect: yesAnswer == currentQuestion.correctAnswer )
-            yesUIButton.isEnabled = false
-            noUIButton.isEnabled = false
-        } else if answer == noAnswer {
-            guard let currentQuestion = currentQuestion else {
-                return
-            }
-            showAnswerResult(isCorrect: noAnswer == currentQuestion.correctAnswer)
-            noUIButton.isEnabled = false
-            yesUIButton.isEnabled = false
-            
-        }
-    }
+//    private func answerGived(answer: Bool) {
+//        let yesAnswer: Bool = true
+//        let noAnswer: Bool = false
+//        
+//        if answer == yesAnswer {
+//            guard let currentQuestion = currentQuestion else {
+//                return
+//            }
+//            showAnswerResult(isCorrect: yesAnswer == currentQuestion.correctAnswer )
+//            yesUIButton.isEnabled = false
+//            noUIButton.isEnabled = false
+//        } else if answer == noAnswer {
+//            guard let currentQuestion = currentQuestion else {
+//                return
+//            }
+//            showAnswerResult(isCorrect: noAnswer == currentQuestion.correctAnswer)
+//            noUIButton.isEnabled = false
+//            yesUIButton.isEnabled = false
+//            
+//        }
+//    }
+    private func answerGived(isCorrect: Bool) {
+           guard let currentQuestion = currentQuestion else { return }
+           yesUIButton.isEnabled = false
+           noUIButton.isEnabled = false
+           showAnswerResult(isCorrect: isCorrect == currentQuestion.correctAnswer)
+       }
     
     @IBAction private func yesBottonClicked(_ sender: UIButton) {
-        answerGived(answer: true)
+        answerGived(isCorrect: true)
     }
     
     @IBAction private func noButtonClicked(_ sender: UIButton) {
-        answerGived(answer: false)
+        answerGived(isCorrect: false)
     }
     
 }
