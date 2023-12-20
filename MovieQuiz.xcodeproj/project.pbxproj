@@ -15,6 +15,8 @@
 		AD77F5742857F8810062FB14 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD77F5732857F8810062FB14 /* Date+Extensions.swift */; };
 		AD7AFA552836189F00399704 /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7AFA542836189F00399704 /* Array+Extensions.swift */; };
 		D84C461A2B2EDB44007DB801 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = D8E70B5F2AF2E1B40081910A /* .swiftlint.yml */; };
+		D84C46582B329386007DB801 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84C46572B329386007DB801 /* NetworkClient.swift */; };
+		D84C465A2B3294EA007DB801 /* MostPopularMovies.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84C46592B3294EA007DB801 /* MostPopularMovies.swift */; };
 		D84F72A92AEAB7D200D9CB97 /* YS Display-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D84F72A72AEAB7D200D9CB97 /* YS Display-Bold.ttf */; };
 		D84F72AA2AEAB7D200D9CB97 /* YS Display-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D84F72A82AEAB7D200D9CB97 /* YS Display-Medium.ttf */; };
 		D84F72B12AF0411B00D9CB97 /* MovieQuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1ABAB52831907B00B3E448 /* MovieQuizViewController.swift */; };
@@ -44,6 +46,8 @@
 		AD5EE5DD284D7887003966EF /* UIColor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		AD77F5732857F8810062FB14 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		AD7AFA542836189F00399704 /* Array+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
+		D84C46572B329386007DB801 /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
+		D84C46592B3294EA007DB801 /* MostPopularMovies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MostPopularMovies.swift; sourceTree = "<group>"; };
 		D84F72A72AEAB7D200D9CB97 /* YS Display-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "YS Display-Bold.ttf"; sourceTree = "<group>"; };
 		D84F72A82AEAB7D200D9CB97 /* YS Display-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "YS Display-Medium.ttf"; sourceTree = "<group>"; };
 		D89F03582B0A665E00C6A864 /* QuestionFactoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionFactoryProtocol.swift; sourceTree = "<group>"; };
@@ -150,6 +154,7 @@
 				D89F03582B0A665E00C6A864 /* QuestionFactoryProtocol.swift */,
 				D89F035A2B0AA5D700C6A864 /* QuestionFactoryDelegate.swift */,
 				D8C64E212B2CA83400E0972C /* StatisticService.swift */,
+				D84C46572B329386007DB801 /* NetworkClient.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -162,6 +167,7 @@
 				D8FC841C2B07975400BD37AD /* QuizQuestion.swift */,
 				D89F035C2B0AB39A00C6A864 /* AlertModel.swift */,
 				D8C64E232B2CA87600E0972C /* GameRecord.swift */,
+				D84C46592B3294EA007DB801 /* MostPopularMovies.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -263,10 +269,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD5EE5DE284D7887003966EF /* UIColor+Extensions.swift in Sources */,
+				D84C465A2B3294EA007DB801 /* MostPopularMovies.swift in Sources */,
 				D89F035F2B0AB43100C6A864 /* AlertPresenter.swift in Sources */,
 				D89F035D2B0AB39A00C6A864 /* AlertModel.swift in Sources */,
 				AD7AFA552836189F00399704 /* Array+Extensions.swift in Sources */,
 				D8C64E242B2CA87600E0972C /* GameRecord.swift in Sources */,
+				D84C46582B329386007DB801 /* NetworkClient.swift in Sources */,
 				D89F03592B0A665E00C6A864 /* QuestionFactoryProtocol.swift in Sources */,
 				D89F035B2B0AA5D700C6A864 /* QuestionFactoryDelegate.swift in Sources */,
 				D84F72B12AF0411B00D9CB97 /* MovieQuizViewController.swift in Sources */,
