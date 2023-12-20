@@ -52,6 +52,7 @@ final class MovieQuizViewController: UIViewController, QuestionFactoryDelegate {
         let viewModel = convert(model: question)
         DispatchQueue.main.async { [weak self] in
             self?.show(quiz: viewModel)
+            self?.hideLoadingIndicator()
         }
     }
     
@@ -79,9 +80,11 @@ final class MovieQuizViewController: UIViewController, QuestionFactoryDelegate {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { [weak self] in
             guard let self = self else { return }
             self.showNextQuestionOrResults()
-            self.imageView.layer.borderColor = UIColor.ypBlack.cgColor
+            imageView.layer.borderColor = UIColor.ypBlack.cgColor
+            imageView.image = nil
             self.yesUIButton.isEnabled = true
             self.noUIButton.isEnabled  = true
+            showLoadingIndicator()
         }
     }
     
@@ -101,7 +104,6 @@ final class MovieQuizViewController: UIViewController, QuestionFactoryDelegate {
             
             currentQuestionIndex += 1
             self.questionFactory?.requestNextQuestion()
-            imageView.isHidden = false
             
         }
     }
